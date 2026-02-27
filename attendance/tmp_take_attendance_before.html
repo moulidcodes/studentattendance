@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Take Attendance — Attendance Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-title">Attendance<br>Tracker</div>
+        <div class="logo-sub">Academic Portal</div>
+    </div>
+    <nav>
+                <a href="index.php?action=dashboard" class="">
+            <span class="icon">📊</span> Dashboard        </a>
+                <a href="index.php?action=take_attendance" class="active">
+            <span class="icon">✅</span> Take Attendance        </a>
+                <a href="index.php?action=students" class="">
+            <span class="icon">👥</span> Students        </a>
+                <a href="index.php?action=reports" class="">
+            <span class="icon">📋</span> Reports        </a>
+            </nav>
+    <div class="sidebar-bottom">
+        <div class="sidebar-date">Friday, February 27, 2026</div>
+    </div>
+</aside>
+
+<!-- Main -->
+<div class="main">
+    <div class="topbar">
+        <div class="page-title">Take Attendance</div>
+        <a href="index.php?action=take_attendance" class="btn btn-primary">✅&nbsp; Take Attendance</a>
+    </div>
+    <div class="content">
+
+
+<form method="post" action="index.php?action=save_attendance">
+
+    <div class="filter-bar">
+        <div class="form-group" style="margin-bottom:0">
+            <label>Date</label>
+            <input type="date" name="date" value="2026-02-27" max="2026-02-27"
+                   onchange="this.form.submit()">
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+            <label>Filter by Class</label>
+            <select onchange="window.location='index.php?action=take_attendance&class='+this.value+'&date=2026-02-27'">
+                <option value="">All Classes</option>
+                                <option value="Grade 10-A" >Grade 10-A</option>
+                                <option value="Grade 10-B" >Grade 10-B</option>
+                            </select>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:8px;align-items:flex-end">
+            <button type="button" class="btn btn-ghost btn-sm" onclick="markAll('present')">✅ All Present</button>
+            <button type="button" class="btn btn-ghost btn-sm" onclick="markAll('absent')">❌ All Absent</button>
+        </div>
+    </div>
+
+    
+    <div class="table-wrap" style="margin-bottom:20px">
+        <div class="att-grid">
+            <div class="att-header">
+                <div style="padding:10px 16px">Student</div>
+                                <div style="padding:10px 8px;text-align:center">Present</div>
+                                <div style="padding:10px 8px;text-align:center">Absent</div>
+                                <div style="padding:10px 8px;text-align:center">Late</div>
+                                <div style="padding:10px 8px;text-align:center">Excused</div>
+                                <div style="padding:10px 16px">Note</div>
+            </div>
+
+                        <div class="att-class-divider">Grade 10-A</div>
+            
+            <div class="att-row" data-sid="2">
+                <div class="att-cell">
+                    <div class="att-name">Bob Martinez</div>
+                    <div class="att-sid">S002</div>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-present">
+                        <input type="radio" name="attendance[2]" value="present" checked>
+                        <span>Present</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-absent">
+                        <input type="radio" name="attendance[2]" value="absent" >
+                        <span>Absent</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-late">
+                        <input type="radio" name="attendance[2]" value="late" >
+                        <span>Late</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-excused">
+                        <input type="radio" name="attendance[2]" value="excused" >
+                        <span>Excused</span>
+                    </label>
+                </div>
+                                <div class="att-note-cell">
+                    <input type="text" name="notes[2]" value="" placeholder="Optional note…">
+                </div>
+            </div>
+            
+            <div class="att-row" data-sid="3">
+                <div class="att-cell">
+                    <div class="att-name">Carol White</div>
+                    <div class="att-sid">S003</div>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-present">
+                        <input type="radio" name="attendance[3]" value="present" checked>
+                        <span>Present</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-absent">
+                        <input type="radio" name="attendance[3]" value="absent" >
+                        <span>Absent</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-late">
+                        <input type="radio" name="attendance[3]" value="late" >
+                        <span>Late</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-excused">
+                        <input type="radio" name="attendance[3]" value="excused" >
+                        <span>Excused</span>
+                    </label>
+                </div>
+                                <div class="att-note-cell">
+                    <input type="text" name="notes[3]" value="" placeholder="Optional note…">
+                </div>
+            </div>
+                        <div class="att-class-divider">Grade 10-B</div>
+            
+            <div class="att-row" data-sid="4">
+                <div class="att-cell">
+                    <div class="att-name">David Kim</div>
+                    <div class="att-sid">S004</div>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-present">
+                        <input type="radio" name="attendance[4]" value="present" checked>
+                        <span>Present</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-absent">
+                        <input type="radio" name="attendance[4]" value="absent" >
+                        <span>Absent</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-late">
+                        <input type="radio" name="attendance[4]" value="late" >
+                        <span>Late</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-excused">
+                        <input type="radio" name="attendance[4]" value="excused" >
+                        <span>Excused</span>
+                    </label>
+                </div>
+                                <div class="att-note-cell">
+                    <input type="text" name="notes[4]" value="" placeholder="Optional note…">
+                </div>
+            </div>
+            
+            <div class="att-row" data-sid="5">
+                <div class="att-cell">
+                    <div class="att-name">Emma Davis</div>
+                    <div class="att-sid">S005</div>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-present">
+                        <input type="radio" name="attendance[5]" value="present" checked>
+                        <span>Present</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-absent">
+                        <input type="radio" name="attendance[5]" value="absent" >
+                        <span>Absent</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-late">
+                        <input type="radio" name="attendance[5]" value="late" >
+                        <span>Late</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-excused">
+                        <input type="radio" name="attendance[5]" value="excused" >
+                        <span>Excused</span>
+                    </label>
+                </div>
+                                <div class="att-note-cell">
+                    <input type="text" name="notes[5]" value="" placeholder="Optional note…">
+                </div>
+            </div>
+            
+            <div class="att-row" data-sid="6">
+                <div class="att-cell">
+                    <div class="att-name">Frank Wilson</div>
+                    <div class="att-sid">S006</div>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-present">
+                        <input type="radio" name="attendance[6]" value="present" checked>
+                        <span>Present</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-absent">
+                        <input type="radio" name="attendance[6]" value="absent" >
+                        <span>Absent</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-late">
+                        <input type="radio" name="attendance[6]" value="late" >
+                        <span>Late</span>
+                    </label>
+                </div>
+                                <div class="att-radio-cell">
+                    <label class="att-radio-label att-excused">
+                        <input type="radio" name="attendance[6]" value="excused" >
+                        <span>Excused</span>
+                    </label>
+                </div>
+                                <div class="att-note-cell">
+                    <input type="text" name="notes[6]" value="" placeholder="Optional note…">
+                </div>
+            </div>
+                    </div>
+    </div>
+
+    <div style="display:flex;gap:10px">
+        <button type="submit" class="btn btn-primary">💾&nbsp; Save Attendance</button>
+        <a href="index.php?action=dashboard" class="btn btn-ghost">Cancel</a>
+    </div>
+
+    </form>
+
+<script>
+function markAll(status) {
+    document.querySelectorAll('input[type=radio][value=' + status + ']')
+        .forEach(r => r.checked = true);
+}
+</script>
+
+</div> <!-- .content -->
+</div> <!-- .main -->
+
+<footer style="padding:18px;text-align:center;color:var(--muted);font-size:.9rem">
+    Attendance Tracker — &copy; 2026</footer>
+
+</body>
+</html>
+

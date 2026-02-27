@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Overview — Attendance Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-title">Attendance<br>Tracker</div>
+        <div class="logo-sub">Academic Portal</div>
+    </div>
+    <nav>
+                <a href="index.php?action=dashboard" class="active">
+            <span class="icon">📊</span> Dashboard        </a>
+                <a href="index.php?action=take_attendance" class="">
+            <span class="icon">✅</span> Take Attendance        </a>
+                <a href="index.php?action=students" class="">
+            <span class="icon">👥</span> Students        </a>
+                <a href="index.php?action=reports" class="">
+            <span class="icon">📋</span> Reports        </a>
+            </nav>
+    <div class="sidebar-bottom">
+        <div class="sidebar-date">Friday, February 27, 2026</div>
+    </div>
+</aside>
+
+<!-- Main -->
+<div class="main">
+    <div class="topbar">
+        <div class="page-title">Dashboard Overview</div>
+        <a href="index.php?action=take_attendance" class="btn btn-primary">✅&nbsp; Take Attendance</a>
+    </div>
+    <div class="content">
+
+
+<div class="cards">
+    <div class="card c-blue">
+        <div class="stat-icon">👤</div>
+        <div class="card-label">Total Students</div>
+        <div class="card-value">5</div>
+        <div class="card-sub">Enrolled</div>
+    </div>
+    <div class="card c-green">
+        <div class="stat-icon">✅</div>
+        <div class="card-label">Present Today</div>
+        <div class="card-value">0</div>
+        <div class="progress">
+            <div class="progress-bar" style="width:0%;background:var(--green)"></div>
+        </div>
+    </div>
+    <div class="card c-red">
+        <div class="stat-icon">❌</div>
+        <div class="card-label">Absent Today</div>
+        <div class="card-value">0</div>
+        <div class="card-sub">As of today</div>
+    </div>
+    <div class="card c-yellow">
+        <div class="stat-icon">⏰</div>
+        <div class="card-label">Late Today</div>
+        <div class="card-value">0</div>
+        <div class="card-sub">Tardiness</div>
+    </div>
+    <div class="card">
+        <div class="stat-icon">📅</div>
+        <div class="card-label">Days Recorded</div>
+        <div class="card-value">0</div>
+        <div class="card-sub">School days tracked</div>
+    </div>
+</div>
+
+<div class="section-header">
+    <div class="section-title">Recent Activity</div>
+    <a href="index.php?action=reports" class="btn btn-ghost btn-sm">View All Reports →</a>
+</div>
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+                        <tr>
+                <td colspan="5" style="padding:32px;text-align:center;color:var(--muted)">
+                    No attendance records yet.
+                    <a href="index.php?action=take_attendance" style="color:var(--accent)">Take attendance →</a>
+                </td>
+            </tr>
+                    </tbody>
+    </table>
+</div>
+
+</div> <!-- .content -->
+</div> <!-- .main -->
+
+<footer style="padding:18px;text-align:center;color:var(--muted);font-size:.9rem">
+    Attendance Tracker — &copy; 2026</footer>
+
+</body>
+</html>
+

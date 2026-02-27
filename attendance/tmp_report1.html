@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Attendance Reports — Attendance Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-title">Attendance<br>Tracker</div>
+        <div class="logo-sub">Academic Portal</div>
+    </div>
+    <nav>
+                <a href="index.php?action=dashboard" class="">
+            <span class="icon">📊</span> Dashboard        </a>
+                <a href="index.php?action=take_attendance" class="">
+            <span class="icon">✅</span> Take Attendance        </a>
+                <a href="index.php?action=students" class="">
+            <span class="icon">👥</span> Students        </a>
+                <a href="index.php?action=reports" class="active">
+            <span class="icon">📋</span> Reports        </a>
+            </nav>
+    <div class="sidebar-bottom">
+        <div class="sidebar-date">Friday, February 27, 2026</div>
+    </div>
+</aside>
+
+<!-- Main -->
+<div class="main">
+    <div class="topbar">
+        <div class="page-title">Attendance Reports</div>
+        <a href="index.php?action=take_attendance" class="btn btn-primary">✅&nbsp; Take Attendance</a>
+    </div>
+    <div class="content">
+
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;align-items:flex-end">
+    <div class="form-group" style="margin-bottom:0;min-width:260px">
+        <label>Select Student</label>
+        <select onchange="window.location='index.php?action=reports&student='+this.value">
+            <option value="0">— All Students Overview —</option>
+                        <option value="2" >
+                Bob Martinez (S002)
+            </option>
+                        <option value="3" >
+                Carol White (S003)
+            </option>
+                        <option value="4" >
+                David Kim (S004)
+            </option>
+                        <option value="5" >
+                Emma Davis (S005)
+            </option>
+                        <option value="6" >
+                Frank Wilson (S006)
+            </option>
+                        <option value="7" >
+                Test User (T999)
+            </option>
+                    </select>
+    </div>
+</div>
+
+        <div class="empty"><div class="empty-icon">🔍</div><p>Student not found.</p></div>
+    
+
+</div> <!-- .content -->
+</div> <!-- .main -->
+
+<footer style="padding:18px;text-align:center;color:var(--muted);font-size:.9rem">
+    Attendance Tracker — &copy; 2026</footer>
+
+</body>
+</html>
+

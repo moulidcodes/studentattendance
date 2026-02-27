@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manage Students — Attendance Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">
+        <div class="logo-title">Attendance<br>Tracker</div>
+        <div class="logo-sub">Academic Portal</div>
+    </div>
+    <nav>
+                <a href="index.php?action=dashboard" class="">
+            <span class="icon">📊</span> Dashboard        </a>
+                <a href="index.php?action=take_attendance" class="">
+            <span class="icon">✅</span> Take Attendance        </a>
+                <a href="index.php?action=students" class="active">
+            <span class="icon">👥</span> Students        </a>
+                <a href="index.php?action=reports" class="">
+            <span class="icon">📋</span> Reports        </a>
+            </nav>
+    <div class="sidebar-bottom">
+        <div class="sidebar-date">Friday, February 27, 2026</div>
+    </div>
+</aside>
+
+<!-- Main -->
+<div class="main">
+    <div class="topbar">
+        <div class="page-title">Manage Students</div>
+        <a href="index.php?action=take_attendance" class="btn btn-primary">✅&nbsp; Take Attendance</a>
+    </div>
+    <div class="content">
+
+
+<div class="section-header">
+    <select onchange="window.location='index.php?action=students&class='+this.value" style="width:auto">
+        <option value="">All Classes</option>
+                <option value="Grade 10-A" >Grade 10-A</option>
+                <option value="Grade 10-B" >Grade 10-B</option>
+            </select>
+    <button class="btn btn-primary" onclick="document.getElementById('add-modal').classList.add('open')">
+        + Add Student
+    </button>
+</div>
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Class</th>
+                <th>Attendance Rate</th>
+                <th>Breakdown</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                                    <tr>
+                <td>
+                    <div style="font-weight:500">Bob Martinez</div>
+                </td>
+                <td style="font-family:monospace;font-size:.85rem;color:var(--muted)">S002</td>
+                <td><span class="badge badge-none">Grade 10-A</span></td>
+                <td style="min-width:140px">
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <div class="progress" style="flex:1">
+                            <div class="progress-bar" style="width:0%;background:var(--red)"></div>
+                        </div>
+                        <span style="font-size:.8rem;color:var(--muted)">0%</span>
+                    </div>
+                </td>
+                <td style="font-size:.75rem;color:var(--muted)">
+                    <span style="color:var(--green)">0 P</span> ·
+                    <span style="color:var(--red)">0 A</span> ·
+                    <span style="color:var(--yellow)">0 L</span> ·
+                    <span style="color:var(--blue)">0 E</span>
+                </td>
+                <td>
+                    <div style="display:flex;gap:6px">
+                        <a href="index.php?action=reports&student=2" class="btn btn-ghost btn-sm">View</a>
+                        <a href="index.php?action=delete_student&id=2"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Delete Bob Martinez? This will also remove all their attendance records.')">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                    <div style="font-weight:500">Carol White</div>
+                </td>
+                <td style="font-family:monospace;font-size:.85rem;color:var(--muted)">S003</td>
+                <td><span class="badge badge-none">Grade 10-A</span></td>
+                <td style="min-width:140px">
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <div class="progress" style="flex:1">
+                            <div class="progress-bar" style="width:0%;background:var(--red)"></div>
+                        </div>
+                        <span style="font-size:.8rem;color:var(--muted)">0%</span>
+                    </div>
+                </td>
+                <td style="font-size:.75rem;color:var(--muted)">
+                    <span style="color:var(--green)">0 P</span> ·
+                    <span style="color:var(--red)">0 A</span> ·
+                    <span style="color:var(--yellow)">0 L</span> ·
+                    <span style="color:var(--blue)">0 E</span>
+                </td>
+                <td>
+                    <div style="display:flex;gap:6px">
+                        <a href="index.php?action=reports&student=3" class="btn btn-ghost btn-sm">View</a>
+                        <a href="index.php?action=delete_student&id=3"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Delete Carol White? This will also remove all their attendance records.')">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                    <div style="font-weight:500">David Kim</div>
+                </td>
+                <td style="font-family:monospace;font-size:.85rem;color:var(--muted)">S004</td>
+                <td><span class="badge badge-none">Grade 10-B</span></td>
+                <td style="min-width:140px">
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <div class="progress" style="flex:1">
+                            <div class="progress-bar" style="width:0%;background:var(--red)"></div>
+                        </div>
+                        <span style="font-size:.8rem;color:var(--muted)">0%</span>
+                    </div>
+                </td>
+                <td style="font-size:.75rem;color:var(--muted)">
+                    <span style="color:var(--green)">0 P</span> ·
+                    <span style="color:var(--red)">0 A</span> ·
+                    <span style="color:var(--yellow)">0 L</span> ·
+                    <span style="color:var(--blue)">0 E</span>
+                </td>
+                <td>
+                    <div style="display:flex;gap:6px">
+                        <a href="index.php?action=reports&student=4" class="btn btn-ghost btn-sm">View</a>
+                        <a href="index.php?action=delete_student&id=4"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Delete David Kim? This will also remove all their attendance records.')">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                    <div style="font-weight:500">Emma Davis</div>
+                </td>
+                <td style="font-family:monospace;font-size:.85rem;color:var(--muted)">S005</td>
+                <td><span class="badge badge-none">Grade 10-B</span></td>
+                <td style="min-width:140px">
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <div class="progress" style="flex:1">
+                            <div class="progress-bar" style="width:0%;background:var(--red)"></div>
+                        </div>
+                        <span style="font-size:.8rem;color:var(--muted)">0%</span>
+                    </div>
+                </td>
+                <td style="font-size:.75rem;color:var(--muted)">
+                    <span style="color:var(--green)">0 P</span> ·
+                    <span style="color:var(--red)">0 A</span> ·
+                    <span style="color:var(--yellow)">0 L</span> ·
+                    <span style="color:var(--blue)">0 E</span>
+                </td>
+                <td>
+                    <div style="display:flex;gap:6px">
+                        <a href="index.php?action=reports&student=5" class="btn btn-ghost btn-sm">View</a>
+                        <a href="index.php?action=delete_student&id=5"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Delete Emma Davis? This will also remove all their attendance records.')">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                    <div style="font-weight:500">Frank Wilson</div>
+                </td>
+                <td style="font-family:monospace;font-size:.85rem;color:var(--muted)">S006</td>
+                <td><span class="badge badge-none">Grade 10-B</span></td>
+                <td style="min-width:140px">
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <div class="progress" style="flex:1">
+                            <div class="progress-bar" style="width:0%;background:var(--red)"></div>
+                        </div>
+                        <span style="font-size:.8rem;color:var(--muted)">0%</span>
+                    </div>
+                </td>
+                <td style="font-size:.75rem;color:var(--muted)">
+                    <span style="color:var(--green)">0 P</span> ·
+                    <span style="color:var(--red)">0 A</span> ·
+                    <span style="color:var(--yellow)">0 L</span> ·
+                    <span style="color:var(--blue)">0 E</span>
+                </td>
+                <td>
+                    <div style="display:flex;gap:6px">
+                        <a href="index.php?action=reports&student=6" class="btn btn-ghost btn-sm">View</a>
+                        <a href="index.php?action=delete_student&id=6"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Delete Frank Wilson? This will also remove all their attendance records.')">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+                                </tbody>
+    </table>
+</div>
+
+<!-- Add Student Modal -->
+<div class="modal-overlay" id="add-modal">
+    <div class="modal">
+        <div class="modal-title">Add New Student</div>
+        <form method="post" action="index.php?action=add_student">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="e.g. Jane Smith" required autofocus>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Student ID</label>
+                    <input type="text" name="student_id" placeholder="e.g. S007" required>
+                </div>
+                <div class="form-group">
+                    <label>Class</label>
+                    <input type="text" name="class" placeholder="e.g. Grade 10-A" required list="class-list">
+                    <datalist id="class-list">
+                                                <option value="Grade 10-A">
+                                                <option value="Grade 10-B">
+                                            </datalist>
+                </div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:4px">
+                <button type="submit" class="btn btn-primary">Add Student</button>
+                <button type="button" class="btn btn-ghost"
+                        onclick="document.getElementById('add-modal').classList.remove('open')">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById('add-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+});
+</script>
+
+</div> <!-- .content -->
+</div> <!-- .main -->
+
+<footer style="padding:18px;text-align:center;color:var(--muted);font-size:.9rem">
+    Attendance Tracker — &copy; 2026</footer>
+
+</body>
+</html>
+
