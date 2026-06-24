@@ -1,4 +1,5 @@
 <?php
+// Branch practice
 // Git practice change
 // includes/helpers.php — Utility functions
 
