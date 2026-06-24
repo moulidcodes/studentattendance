@@ -1,4 +1,5 @@
 <?php
+// Git practice change
 // includes/helpers.php — Utility functions
 
 function esc(string $s): string {
